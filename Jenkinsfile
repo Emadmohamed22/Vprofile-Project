@@ -6,10 +6,10 @@ pipeline {
                 git branch: 'paac', url: 'https://github.com/Emadmohamed22/Vprofile-Project.git'
             }
         }
-    }
         stage('build') {
             steps {
                 sh 'mvn clean install -DskipTests'
             }
         }
     }
+}
