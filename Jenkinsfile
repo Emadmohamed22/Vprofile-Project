@@ -1,4 +1,7 @@
 pipeline {
+    tools {
+        maven "maven3"
+    }
     agent any
     stages {
         stage('Fetch Code') {
@@ -13,3 +16,4 @@ pipeline {
         }
     }
 }
+
