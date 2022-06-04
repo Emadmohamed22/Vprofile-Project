@@ -9,14 +9,14 @@ pipeline {
                 git branch: 'paac', url: 'https://github.com/Emadmohamed22/Vprofile-Project.git'
             }
         }
-        stage('UNIT TEST'){
-            steps {
-                sh 'mvn test'
-            }
-        }
         stage('build') {
             steps {
                 sh 'mvn clean install -DskipTests'
+            }
+        }
+                stage('UNIT TEST'){
+            steps {
+                sh 'mvn test'
             }
         }
     }
