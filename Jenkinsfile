@@ -1,6 +1,6 @@
 pipeline {
     tools {
-        maven "maven-3.8.5"
+        maven "maven3"
     }
     agent any
     stages {
@@ -12,6 +12,11 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn clean install -DskipTests'
+            }
+        }
+        stage('UNIT TEST'){
+            steps {
+                sh 'mvn test'
             }
         }
     }
