@@ -1,20 +1,9 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Fetch Code') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                git branch: 'paac', url: 'https://github.com/Emadmohamed22/Vprofile-Project.git'
             }
         }
     }
